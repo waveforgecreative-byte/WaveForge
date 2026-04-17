@@ -3,102 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaveForge | We Forge Cinema</title>
+    <title>WaveForge | Premium Wedding Editing Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
+        /* আগের ডার্ক থিম এবং গ্লসি এফেক্ট */
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; scroll-behavior: smooth; }
         .glass-nav { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .hero-title { font-size: 4rem; line-height: 1; font-weight: 900; letter-spacing: -0.05em; }
-        @media (min-width: 768px) { .hero-title { font-size: 7rem; } }
+        
+        .hero-title { font-size: 4.5rem; line-height: 1; font-weight: 900; letter-spacing: -0.05em; }
+        @media (min-width: 768px) { .hero-title { font-size: 7.5rem; } }
+        
+        /* সেই অরেঞ্জ-পিঙ্ক বাটন */
         .btn-magic { background: linear-gradient(90deg, #f97316, #db2777); transition: 0.3s; }
-        .pkg-card { background: #ffffff; color: #1e293b; border-radius: 24px; transition: 0.4s; padding: 35px; cursor: pointer; position: relative; height: 100%; border: 1px solid transparent; }
-        .pkg-card:hover { transform: translateY(-10px); }
+        .btn-magic:hover { transform: scale(1.05); opacity: 0.9; }
+
+        /* সাদা প্যাকেজ কার্ড (আগের থিম অনুযায়ী) */
+        .pkg-card { background: #ffffff; color: #1e293b; border-radius: 30px; transition: 0.4s; padding: 40px; cursor: pointer; position: relative; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .pkg-card:hover { transform: translateY(-12px); border: 2px solid #3b82f6; }
         .pkg-card.premium { background: #2563eb; color: #ffffff; border: none; }
-        .best-seller { background: #fbbf24; color: #000; padding: 4px 16px; border-radius: 8px; font-weight: 900; font-size: 11px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); }
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; }
-        .modal-content { background: #0f172a; padding: 35px; border-radius: 24px; max-width: 500px; width: 90%; border: 1px solid #3b82f6; }
-        #invoiceBox { display: none; background: white; color: black; padding: 30px; border-radius: 12px; font-family: 'Courier New', monospace; }
-        @media print { .no-print { display: none; } }
+        
+        /* বেস্ট সেলার ব্যাজ */
+        .best-seller { background: #fbbf24; color: #000; padding: 6px 20px; border-radius: 50px; font-weight: 900; font-size: 12px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4); }
+
+        /* ইনভয়েস পপআপ */
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.96); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background: #0f172a; padding: 40px; border-radius: 30px; max-width: 500px; width: 100%; border: 1px solid #3b82f6; }
+        
+        #invoiceBox { display: none; background: white; color: black; padding: 40px; border-radius: 15px; font-family: 'Courier New', monospace; line-height: 1.4; }
+        .inv-header { border-bottom: 2px solid black; margin-bottom: 20px; padding-bottom: 10px; text-align: center; }
+        @media print { .no-print { display: none; } body { background: white; } }
     </style>
 </head>
 <body>
 
-    <nav class="sticky top-0 z-50 glass-nav px-6 py-4">
+    <nav class="sticky top-0 z-50 glass-nav px-6 py-5">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="logo%20wave.png" alt="WaveForge" class="h-20 md:h-28 w-auto">
+            <div class="flex items-center space-x-5">
+                <img src="logo%20wave.png" alt="WaveForge Logo" class="h-24 md:h-32 w-auto object-contain">
                 <div class="hidden sm:block">
-                    <h1 class="text-2xl font-black text-blue-500 uppercase tracking-tighter">WaveForge</h1>
-                    <p class="text-[10px] text-gray-400 font-bold tracking-[0.3em] uppercase">Creative Byte Agency</p>
+                    <h1 class="text-3xl font-black text-blue-500 uppercase tracking-tighter">WaveForge</h1>
+                    <p class="text-[10px] text-gray-500 font-bold tracking-[0.4em] uppercase">Creative Byte Agency</p>
                 </div>
             </div>
-            <div class="flex items-center space-x-6 font-bold text-xs tracking-widest uppercase">
-                <a href="#portfolio" class="hover:text-blue-500">Portfolio</a>
-                <a href="#pricing" class="hover:text-blue-500">Pricing</a>
-                <a href="mailto:waveforgecreative@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:scale-105 transition">Hire Us</a>
+            <div class="flex items-center space-x-8 font-bold text-xs tracking-widest uppercase">
+                <a href="#about" class="hover:text-blue-500 transition">About</a>
+                <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="hover:text-blue-500 transition">Portfolio</a>
+                <a href="#pricing" class="hover:text-blue-500 transition">Pricing</a>
+                <a href="mailto:waveforgecreative@gmail.com" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 shadow-lg">Hire Us</a>
             </div>
         </div>
     </nav>
 
-    <header class="min-h-[70vh] flex flex-col items-center justify-center text-center px-6">
-        <h2 class="hero-title uppercase mb-6">WE FORGE <span class="text-blue-600">CINEMA.</span></h2>
-        <p class="text-lg opacity-60 max-w-2xl mx-auto mb-10 font-light">High-end wedding post-production agency serving filmmakers across the globe.</p>
-        <div class="flex flex-wrap justify-center gap-6">
-            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="btn-magic text-white px-10 py-4 rounded-2xl font-black text-lg">SEE OUR MAGIC</a>
-            <a href="#pricing" class="bg-white text-black px-10 py-4 rounded-2xl font-black text-lg">VIEW PACKAGES</a>
+    <header class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6">
+        <h2 class="hero-title uppercase mb-8">WAVE<span class="text-blue-600">FORGE</span></h2>
+        <p class="text-xl opacity-70 max-w-2xl mx-auto mb-12 font-light italic">"Premium Wedding Post-Production Agency Serving Filmmakers Globally."</p>
+        <div class="flex flex-wrap justify-center gap-8">
+            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="btn-magic text-white px-12 py-5 rounded-2xl font-black text-xl shadow-2xl">SEE OUR MAGIC</a>
+            <a href="#pricing" class="bg-white text-black px-12 py-5 rounded-2xl font-black text-xl hover:bg-gray-200 transition">VIEW PACKAGES</a>
         </div>
     </header>
 
-    <section id="pricing" class="container mx-auto py-24 px-6">
-        <h3 class="text-4xl font-black mb-16 text-center uppercase tracking-widest text-blue-500">Video Packages</h3>
-        <div class="grid md:grid-cols-3 gap-8 mb-24">
+    <section id="about" class="container mx-auto py-24 px-6 text-center border-t border-slate-900">
+        <h3 class="text-4xl font-black mb-10 uppercase text-blue-500 tracking-widest">About WaveForge</h3>
+        <div class="max-w-4xl mx-auto space-y-6">
+            <p class="text-2xl font-light opacity-90 leading-relaxed">
+                আমরা গত <span class="text-blue-500 font-bold">৫ বছর</span> ধরে গ্লোবাল স্ট্যান্ডার্ড বজায় রেখে ওয়েডিং সিনেমাটোগ্রাফি নিয়ে কাজ করছি।
+            </p>
+            <p class="text-lg opacity-70 leading-relaxed">
+                আপনার জীবনের সেরা মুহূর্তগুলোকে আমরা সাধারণ ভিডিও থেকে একটি <span class="text-white font-bold">মাস্টারপিস মুভিতে</span> রূপান্তর করি। আমাদের হাই-এন্ড কালার গ্রেডিং এবং ইমারসিভ সাউন্ড ডিজাইন আপনার স্মৃতিগুলোকে করবে আরও প্রাণবন্ত। নিখুঁত ডিটেইলস এবং ক্রিয়েটিভ স্টোরিটেলিং আমাদের প্রতিটি কাজের সিগনেচার।
+            </p>
+        </div>
+    </section>
+
+    <section id="pricing" class="container mx-auto py-24 px-6 border-t border-slate-900">
+        <h3 class="text-5xl font-black mb-20 text-center uppercase tracking-tighter text-blue-500">Service Packages</h3>
+        
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10 mb-24">
             <div class="pkg-card" onclick="openCheckout('Standard Edit', '150')">
-                <h4 class="text-lg font-bold opacity-60 mb-1 uppercase">Standard</h4>
-                <p class="text-5xl font-black mb-6 text-blue-600">$150</p>
-                <ul class="text-left space-y-3 mb-8 text-sm">
-                    <li>✓ 3-4 Min Highlight</li>
-                    <li>✓ 1 Hour Full Film</li>
-                    <li>✓ Color Correction</li>
+                <h4 class="text-xl font-bold opacity-50 mb-2 uppercase">Standard</h4>
+                <p class="text-6xl font-black mb-8 text-blue-600">$150</p>
+                <ul class="text-left space-y-4 mb-10 text-sm font-semibold">
+                    <li>✓ 3-4 Min Highlight Film</li>
+                    <li>✓ 1 Hour Full Documentary Film</li>
+                    <li>✓ Professional Color Correction</li>
                 </ul>
-                <button class="w-full py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-black uppercase text-xs">Get Started</button>
+                <button class="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-black uppercase text-xs">Get Started</button>
             </div>
             <div class="pkg-card premium" onclick="openCheckout('Cinematic Pro', '250')">
                 <div class="best-seller">BEST SELLER</div>
-                <h4 class="text-lg font-bold mb-1 uppercase">Cinematic Pro</h4>
-                <p class="text-5xl font-black mb-6 text-white">$250</p>
-                <ul class="text-left space-y-3 mb-8 text-sm">
+                <h4 class="text-xl font-bold mb-2 uppercase">Cinematic Pro</h4>
+                <p class="text-6xl font-black mb-8 text-white">$250</p>
+                <ul class="text-left space-y-4 mb-10 text-sm font-semibold">
                     <li>✓ Signature Highlight Film</li>
-                    <li>✓ Advanced Color Grading</li>
-                    <li>✓ Pro Sound Mix & SFX</li>
+                    <li>✓ Advanced Cinema Color Grading</li>
+                    <li>✓ Premium Sound Mix & SFX</li>
                 </ul>
-                <button class="w-full py-3 bg-white text-blue-600 rounded-xl font-black uppercase text-xs">Choose Pro</button>
+                <button class="w-full py-4 bg-white text-blue-600 rounded-2xl font-black uppercase text-xs shadow-xl">Choose Pro</button>
             </div>
             <div class="pkg-card" onclick="openCheckout('Elite Story', '320')">
-                <h4 class="text-lg font-bold opacity-60 mb-1 uppercase">Elite Story</h4>
-                <p class="text-5xl font-black mb-6 text-blue-600">$320</p>
-                <ul class="text-left space-y-3 mb-8 text-sm">
+                <h4 class="text-xl font-bold opacity-50 mb-2 uppercase">Elite Story</h4>
+                <p class="text-6xl font-black mb-8 text-blue-600">$320</p>
+                <ul class="text-left space-y-4 mb-10 text-sm font-semibold">
                     <li>✓ 4-7 Min Premium Highlight</li>
-                    <li>✓ Full Multicam Film</li>
-                    <li>✓ Masterful Storytelling</li>
+                    <li>✓ Full Multicam Cinematic Film</li>
+                    <li>✓ Masterful Storytelling Edit</li>
                 </ul>
-                <button class="w-full py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-black uppercase text-xs">Get Elite</button>
+                <button class="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-black uppercase text-xs">Get Elite</button>
             </div>
         </div>
 
-        <h3 class="text-4xl font-black mb-16 text-center uppercase tracking-widest text-blue-500">Photo Packages</h3>
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
             <div class="pkg-card" onclick="openCheckout('Photo Basic', '100')">
-                <h4 class="text-lg font-bold opacity-60 mb-1 uppercase">Photo Basic</h4>
-                <p class="text-5xl font-black mb-6 text-blue-600">$100</p>
-                <p class="text-sm opacity-70 mb-8">Full wedding album color correction & consistency.</p>
-                <button class="w-full py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-black uppercase text-xs">Hire Now</button>
+                <h4 class="text-xl font-bold opacity-50 mb-2 uppercase">Photo Basic</h4>
+                <p class="text-6xl font-black mb-8 text-blue-600">$100</p>
+                <p class="text-sm opacity-70 mb-10">Wedding album color consistency & correction.</p>
+                <button class="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-black uppercase text-xs">Hire Now</button>
             </div>
             <div class="pkg-card premium" onclick="openCheckout('Photo Premium', '180')">
-                <h4 class="text-lg font-bold mb-1 uppercase">Photo Premium</h4>
-                <p class="text-5xl font-black mb-6 text-white">$180</p>
-                <p class="text-sm mb-8">120 High-end skin retouch & object removal.</p>
-                <button class="w-full py-3 bg-white text-blue-600 rounded-xl font-black uppercase text-xs">Hire Now</button>
+                <h4 class="text-xl font-bold mb-2 uppercase">Photo Premium</h4>
+                <p class="text-6xl font-black mb-8 text-white">$180</p>
+                <p class="text-sm mb-10">120+ High-end skin retouch & object removal.</p>
+                <button class="w-full py-4 bg-white text-blue-600 rounded-2xl font-black uppercase text-xs shadow-xl">Hire Now</button>
             </div>
         </div>
     </section>
@@ -106,44 +132,49 @@
     <div id="checkoutModal" class="modal">
         <div class="modal-content">
             <div id="checkoutForm">
-                <h3 class="text-2xl font-black text-blue-500 mb-2 uppercase" id="pkgTitle">Package</h3>
-                <p class="text-4xl font-black mb-6" id="pkgPrice">$0</p>
-                <div class="bg-slate-900 p-5 rounded-2xl mb-6 text-sm border border-slate-800">
-                    <p class="text-yellow-500 font-bold mb-2 uppercase tracking-tighter">Payment Details</p>
-                    <p class="opacity-80">International: <b>Wise / Remitly</b></p>
-                    <p class="opacity-80">Bangladesh: <b>bKash - 01825221830</b></p>
+                <h3 class="text-3xl font-black text-blue-500 mb-2 uppercase" id="pkgTitle">Package</h3>
+                <p class="text-5xl font-black mb-8" id="pkgPrice">$0</p>
+                <div class="bg-slate-900 p-6 rounded-2xl mb-8 border border-slate-800 text-sm">
+                    <p class="text-yellow-500 font-bold mb-2 uppercase">Payment Method</p>
+                    <p>International: <b>Wise / Remitly</b></p>
+                    <p>Bangladesh: <b>bKash - 01825221830</b></p>
                 </div>
-                <input type="text" id="clientName" placeholder="Your Full Name" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 mb-4 outline-none focus:border-blue-500 text-white">
-                <input type="text" id="trxId" placeholder="Trx ID / bKash Number" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 mb-6 outline-none text-center font-bold text-blue-400">
-                <button onclick="confirmOrder()" class="w-full bg-blue-600 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-blue-700">PLACE ORDER</button>
-                <button onclick="closeModal()" class="mt-4 block mx-auto text-sm opacity-40 hover:opacity-100">Cancel Order</button>
+                <input type="text" id="clientName" placeholder="Your Full Name" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 mb-4 outline-none text-white">
+                <input type="text" id="trxId" placeholder="Trx ID / bKash Number" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 mb-8 outline-none text-center font-bold text-blue-400">
+                <button onclick="confirmOrder()" class="w-full bg-blue-600 py-5 rounded-2xl font-black uppercase">PLACE ORDER</button>
+                <button onclick="closeModal()" class="mt-4 block mx-auto text-sm opacity-50">Cancel</button>
             </div>
 
             <div id="invoiceBox">
-                <div class="flex justify-between border-b-2 border-black pb-3 mb-4">
-                    <h2 class="font-black text-lg">WAVEFORGE RECEIPT</h2>
-                    <p class="text-xs" id="invDate"></p>
+                <div class="inv-header">
+                    <h2 style="font-size: 22px; font-weight: 900;">WAVEFORGE RECEIPT</h2>
+                    <p style="font-size: 10px;">OFFICIAL DIGITAL INVOICE</p>
                 </div>
-                <div class="space-y-2 text-sm">
-                    <p><b>INVOICE NO:</b> #WF-<span id="invId"></span></p>
-                    <p><b>CLIENT:</b> <span id="invName"></span></p>
-                    <p><b>SERVICE:</b> <span id="invPkg"></span></p>
-                    <p><b>TOTAL PAID:</b> <span id="invPrice"></span></p>
-                    <p><b>TRX ID:</b> <span id="invTrx"></span></p>
+                <div style="font-size: 14px; margin-bottom: 20px;">
+                    <p><b>INVOICE NO :</b> #WF-<span id="invId"></span></p>
+                    <p><b>DATE       :</b> <span id="invDate"></span></p>
+                    <hr style="margin: 15px 0;">
+                    <p><b>CLIENT     :</b> <span id="invName"></span></p>
+                    <p><b>SERVICE    :</b> <span id="invPkg"></span></p>
+                    <p><b>STATUS     :</b> PAID ✅</p>
+                    <p><b>TRX ID     :</b> <span id="invTrx"></span></p>
+                    <hr style="margin: 15px 0;">
+                    <p style="font-size: 18px; font-weight: 900;">TOTAL: <span id="invPrice"></span></p>
                 </div>
-                <div class="mt-8 pt-4 border-t border-dashed border-gray-400 text-center">
-                    <p class="font-bold text-green-600">VERIFIED PAYMENT ✅</p>
-                    <p class="text-[10px] mt-1 opacity-60">WaveForge Creative Byte Agency</p>
-                </div>
-                <button onclick="window.print()" class="mt-6 w-full py-2 bg-black text-white rounded font-bold text-xs uppercase no-print">Print / Save PDF</button>
-                <button onclick="closeModal()" class="mt-2 w-full py-2 border border-black rounded font-bold text-xs uppercase no-print">Done</button>
+                <button onclick="window.print()" class="mt-6 w-full py-3 bg-black text-white rounded font-black no-print">Save as PDF</button>
+                <button onclick="closeModal()" class="mt-2 w-full py-2 border border-black rounded font-black no-print">Done</button>
             </div>
         </div>
     </div>
 
-    <footer class="py-20 text-center border-t border-slate-900">
-        <img src="logo%20wave.png" alt="WaveForge" class="h-32 mx-auto mb-6">
-        <p class="text-[10px] opacity-20 tracking-[1.5em] uppercase font-bold italic">© 2026 WaveForge Agency</p>
+    <footer class="py-24 text-center border-t border-slate-900">
+        <img src="logo%20wave.png" alt="WaveForge Logo" class="h-40 mx-auto mb-8">
+        <h5 class="text-4xl font-black text-blue-600 mb-10 tracking-tighter uppercase">WaveForge</h5>
+        <div class="flex justify-center space-x-12 font-black text-lg mb-12">
+            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="hover:text-blue-500 transition border-b-2 border-transparent hover:border-blue-500 pb-1">INSTAGRAM</a>
+            <a href="mailto:waveforgecreative@gmail.com" class="hover:text-blue-500 transition border-b-2 border-transparent hover:border-blue-500 pb-1">EMAIL US</a>
+        </div>
+        <p class="text-[10px] opacity-20 tracking-[1.5em] uppercase font-bold italic">© 2026 WaveForge Agency | All Rights Reserved</p>
     </footer>
 
     <script>
@@ -152,27 +183,21 @@
             document.getElementById('pkgPrice').innerText = "$" + price;
             document.getElementById('checkoutModal').style.display = 'flex';
         }
-
         function closeModal() {
             document.getElementById('checkoutModal').style.display = 'none';
             document.getElementById('checkoutForm').style.display = 'block';
             document.getElementById('invoiceBox').style.display = 'none';
-            document.getElementById('clientName').value = "";
-            document.getElementById('trxId').value = "";
         }
-
         function confirmOrder() {
             const name = document.getElementById('clientName').value;
             const trx = document.getElementById('trxId').value;
-            if(!name || !trx) { alert("Please complete details!"); return; }
-
-            document.getElementById('invName').innerText = name;
-            document.getElementById('invPkg').innerText = document.getElementById('pkgTitle').innerText;
+            if(!name || !trx) { alert("Please enter details!"); return; }
+            document.getElementById('invName').innerText = name.toUpperCase();
+            document.getElementById('invPkg').innerText = document.getElementById('pkgTitle').innerText.toUpperCase();
             document.getElementById('invPrice').innerText = document.getElementById('pkgPrice').innerText;
-            document.getElementById('invTrx').innerText = trx;
+            document.getElementById('invTrx').innerText = trx.toUpperCase();
             document.getElementById('invDate').innerText = new Date().toLocaleDateString();
-            document.getElementById('invId').innerText = Math.floor(1000 + Math.random() * 9000);
-
+            document.getElementById('invId').innerText = Math.floor(100000 + Math.random() * 900000);
             document.getElementById('checkoutForm').style.display = 'none';
             document.getElementById('invoiceBox').style.display = 'block';
         }
