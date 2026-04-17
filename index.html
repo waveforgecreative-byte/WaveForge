@@ -1,99 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Waveforge | Wedding Video & Photo Editing</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-.gradient-bg { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
-.card:hover { transform: translateY(-5px); transition: 0.3s; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waveforge | Wedding Video & Photo Editing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        /* Instagram Video Styling */
+        .video-card iframe { width: 100%; min-height: 450px; border-radius: 12px; }
+        .card:hover { transform: translateY(-5px); transition: 0.3s; }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-<nav class="bg-white shadow-md p-4 sticky top-0 z-50">
-<div class="container mx-auto flex justify-between items-center">
-<h1 class="text-2xl font-bold text-blue-600">WAVEFORGE</h1>
-<div class="space-x-6">
-<a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
-<a href="#pricing" class="hover:text-blue-600">Pricing</a>
-<a href="#track" class="bg-blue-600 text-white px-4 py-2 rounded">Client Login</a>
-</div>
-</div>
-</nav>
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="logo%20wave.png" alt="Waveforge Logo" class="h-14 w-auto object-contain">
+                <h1 class="text-2xl font-bold text-blue-600 tracking-tight">WAVEFORGE</h1>
+            </div>
+            <div class="space-x-6 hidden md:flex items-center">
+                <a href="#portfolio" class="hover:text-blue-600 font-semibold">Portfolio</a>
+                <a href="#pricing" class="hover:text-blue-600 font-semibold">Pricing</a>
+                <a href="#track" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition">Client Login</a>
+            </div>
+        </div>
+    </nav>
 
-<header class="gradient-bg text-white py-20 text-center">
-<h2 class="text-5xl font-extrabold mb-4">Professional Wedding Editing</h2>
-<p class="text-slate-300 mb-8 text-lg">We bring your memories to life with Waveforge precision.</p>
-<a href="#portfolio" class="bg-yellow-500 text-black px-8 py-3 rounded-full font-bold">View Our Work</a>
-</header>
+    <header class="gradient-bg text-white py-24 text-center">
+        <h2 class="text-5xl font-extrabold mb-4">Waveforge Creative</h2>
+        <p class="text-slate-300 mb-8 text-lg px-4">Premium Wedding Video & Photo Editing Agency</p>
+        <a href="#portfolio" class="bg-yellow-500 text-black px-10 py-4 rounded-full font-bold hover:bg-yellow-400 shadow-lg transition">Explore Our Work</a>
+    </header>
 
-<section id="track" class="container mx-auto py-16 px-4">
-<div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg border border-blue-100">
-<h3 class="text-2xl font-bold mb-6 text-center text-blue-700">Track Your Project</h3>
-<input type="text" id="orderId" placeholder="Enter Order ID (e.g. WF-101)" class="w-full p-3 border rounded mb-4">
-<button onclick="trackProject()" class="w-full bg-blue-600 text-white py-3 rounded font-bold">Track Now</button>
+    <section id="portfolio" class="container mx-auto py-20 px-4">
+        <h3 class="text-3xl font-bold mb-12 text-center border-b-4 border-blue-600 w-48 mx-auto pb-2">Portfolio</h3>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="video-card bg-white p-4 shadow-2xl rounded-2xl border border-slate-100 card">
+                <h4 class="font-bold mb-4 text-blue-600 text-lg italic"># Cinematic Highlight 01</h4>
+                <iframe src="https://www.instagram.com/reels/videos/YOUR_VIDEO_ID_HERE/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
 
-<div id="statusResult" class="mt-6 hidden p-4 bg-blue-50 rounded border border-blue-200">
-<p class="text-sm">Status: <span id="statusLabel" class="font-bold text-blue-600"></span></p>
-<div class="w-full bg-gray-200 h-2 mt-2 rounded">
-<div id="progressBar" class="bg-green-500 h-2 rounded transition-all duration-500" style="width: 0%"></div>
-</div>
-</div>
-</div>
-</section>
+            <div class="video-card bg-white p-4 shadow-2xl rounded-2xl border border-slate-100 card">
+                <h4 class="font-bold mb-4 text-blue-600 text-lg italic"># Wedding Story 02</h4>
+                <iframe src="https://www.instagram.com/reels/videos/YOUR_VIDEO_ID_HERE/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            </div>
+        </div>
+    </section>
 
-<section id="portfolio" class="bg-white py-16">
-<div class="container mx-auto text-center px-4">
-<h3 class="text-3xl font-bold mb-10">Our Recent Work</h3>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="bg-slate-200 h-48 flex items-center justify-center rounded">Wedding Film 01</div>
-<div class="bg-slate-200 h-48 flex items-center justify-center rounded">Pre-Wedding Shoot</div>
-<div class="bg-slate-200 h-48 flex items-center justify-center rounded">Highlights Reel</div>
-</div>
-</div>
-</section>
+    <section id="track" class="bg-slate-100 py-20">
+        <div class="max-w-md mx-auto bg-white p-10 rounded-3xl shadow-2xl border-t-8 border-blue-600">
+            <h3 class="text-2xl font-bold mb-4 text-center text-blue-900">Project Live Tracking</h3>
+            <p class="text-sm text-center mb-6 text-slate-500 italic">"Track your memories as they are forged."</p>
+            <input type="text" id="orderId" placeholder="Enter Order ID (e.g. WF-101)" class="w-full p-4 bg-slate-50 border-2 border-slate-200 rounded-xl mb-4 focus:border-blue-500 outline-none text-center font-bold">
+            <button onclick="trackProject()" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-800 shadow-md transition-all">Find Project Status</button>
+            
+            <div id="statusResult" class="mt-8 hidden p-6 bg-blue-50 rounded-2xl border border-blue-100">
+                <p class="text-xs font-bold uppercase text-blue-400 tracking-widest">Current Status</p>
+                <p id="statusLabel" class="text-xl font-bold text-blue-800 mt-2"></p>
+                <div class="w-full bg-slate-200 h-4 mt-5 rounded-full overflow-hidden shadow-inner">
+                    <div id="progressBar" class="bg-green-500 h-full transition-all duration-1000" style="width: 0%"></div>
+                </div>
+                <p id="progressPercent" class="text-right text-xs font-bold text-blue-600 mt-2">0% Complete</p>
+            </div>
+        </div>
+    </section>
 
-<section id="pricing" class="py-16 container mx-auto px-4">
-<h3 class="text-3xl font-bold mb-10 text-center">Flexible Packages</h3>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="bg-white p-8 rounded-lg shadow-md border text-center card">
-<h4 class="text-xl font-bold mb-4">Basic</h4>
-<p class="text-3xl font-bold mb-6">$99</p>
-<ul class="text-left space-y-3 mb-8">
-<li>✓ 5-min Highlight Video</li>
-<li>✓ Basic Color Grading</li>
-<li>✓ 48h Delivery</li>
-</ul>
-<button class="w-full border-2 border-blue-600 text-blue-600 py-2 rounded">Choose Basic</button>
-</div>
-</div>
-</section>
+    <section id="pricing" class="py-20 container mx-auto px-4">
+        <h3 class="text-3xl font-bold mb-12 text-center">Service Packages</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-slate-300 card text-center">
+                <h4 class="text-xl font-bold text-slate-500 mb-2">Essential Edit</h4>
+                <p class="text-4xl font-black mb-6">$150</p>
+                <ul class="text-left space-y-4 mb-8 text-slate-600 font-medium">
+                    <li>✨ Highlight Video (3-5 min)</li>
+                    <li>✨ Basic Color Correction</li>
+                    <li>✨ 5 Business Days Delivery</li>
+                </ul>
+                <button class="w-full py-3 rounded-lg border-2 border-blue-600 text-blue-600 font-bold hover:bg-blue-600 hover:text-white transition">Get Started</button>
+            </div>
+            <div class="bg-blue-700 text-white p-8 rounded-2xl shadow-2xl card text-center transform lg:scale-110 relative">
+                <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-black px-4 py-1 rounded-full text-xs font-bold">BEST SELLER</span>
+                <h4 class="text-xl font-bold mb-2">Cinematic Premium</h4>
+                <p class="text-4xl font-black mb-6">$300</p>
+                <ul class="text-left space-y-4 mb-8 font-medium">
+                    <li>✨ Cinematic Movie (20 min)</li>
+                    <li>✨ High-End Color Grading</li>
+                    <li>✨ Sound Design & Mixing</li>
+                    <li>✨ 3 Days Fast-Track Delivery</li>
+                </ul>
+                <button class="w-full py-3 rounded-lg bg-white text-blue-700 font-bold hover:bg-yellow-400 hover:text-black transition">Choose Premium</button>
+            </div>
+        </div>
+    </section>
 
-<footer class="bg-slate-900 text-white py-10 text-center">
-<p>&copy; 2024 Waveforge Agency. Based in Bangladesh, Serving Globally.</p>
-</footer>
+    <footer class="bg-slate-900 text-white py-16 text-center px-4">
+        <div class="flex flex-col items-center">
+            <img src="logo%20wave.png" alt="Waveforge Logo" class="h-16 w-auto mb-4 brightness-0 invert">
+            <p class="text-2xl font-bold tracking-widest uppercase">WAVEFORGE</p>
+            <p class="text-slate-400 mt-2 max-w-sm">Elevating your wedding memories through expert craftsmanship and cinematic vision.</p>
+        </div>
+        <div class="mt-10 border-t border-slate-800 pt-8 text-sm text-slate-500">
+            &copy; 2026 Waveforge Creative-Byte. Designed for Excellence.
+        </div>
+    </footer>
 
-<script>
-function trackProject() {
-const id = document.getElementById('orderId').value;
-const result = document.getElementById('statusResult');
-const label = document.getElementById('statusLabel');
-const bar = document.getElementById('progressBar');
+    <script>
+        function trackProject() {
+            const id = document.getElementById('orderId').value.toUpperCase().trim();
+            const result = document.getElementById('statusResult');
+            const label = document.getElementById('statusLabel');
+            const bar = document.getElementById('progressBar');
+            const percent = document.getElementById('progressPercent');
 
-if(id === "WF-101") {
-result.classList.remove('hidden');
-label.innerText = "In Progress (Editing)";
-bar.style.width = "65%";
-} else if(id === "WF-102") {
-result.classList.remove('hidden');
-label.innerText = "Delivered";
-bar.style.width = "100%";
-} else {
-alert("Order ID not found! Try WF-101");
-}
-}
-</script>
+            result.classList.remove('hidden');
+
+            if(id === "WF-101") {
+                label.innerText = "🎬 Editing in Progress";
+                bar.style.width = "65%";
+                percent.innerText = "65% Complete";
+                bar.className = "bg-blue-500 h-full transition-all duration-1000";
+            } else if(id === "WF-202") {
+                label.innerText = "✅ Final Export Ready";
+                bar.style.width = "100%";
+                percent.innerText = "100% Complete";
+                bar.className = "bg-green-500 h-full transition-all duration-1000";
+            } else if(id === "WF-001") {
+                label.innerText = "📂 Raw Footage Uploading";
+                bar.style.width = "15%";
+                percent.innerText = "15% Complete";
+                bar.className = "bg-yellow-500 h-full transition-all duration-1000";
+            } else {
+                label.innerText = "❌ Order ID Not Found";
+                bar.style.width = "0%";
+                percent.innerText = "0% Complete";
+                alert("Please check your Order ID and try again.");
+            }
+        }
+    </script>
 </body>
 </html>
