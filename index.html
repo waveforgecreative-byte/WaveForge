@@ -3,172 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaveForge | Premium Wedding Editing Agency</title>
+    <title>WaveForge | Professional Wedding Editing Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; scroll-behavior: smooth; }
-        .glass-nav { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        
-        /* Premium Package Card like Screenshot */
-        .pkg-card { background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; transition: 0.4s ease; cursor: pointer; position: relative; overflow: hidden; }
-        .pkg-card:hover { transform: translateY(-10px); border-color: #3b82f6; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        .pkg-featured { background: #2563eb; border: 1px solid #3b82f6; }
-        
-        .magic-btn { background: linear-gradient(90deg, #f59e0b, #ec4899); border: none; }
-        
-        /* Modal */
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; }
-        .modal-content { background: #0f172a; padding: 40px; border-radius: 24px; max-width: 500px; width: 90%; border: 1px solid #3b82f6; }
-        
-        #invoiceBox { display: none; background: #fff; color: #000; padding: 30px; border-radius: 12px; font-family: 'Courier New', monospace; }
-        .best-seller-badge { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: #fbbf24; color: #000; padding: 4px 16px; font-weight: 800; font-size: 10px; border-radius: 0 0 12px 12px; text-transform: uppercase; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: 0.3s ease; scroll-behavior: smooth; }
+        .dark { background-color: #020617; color: #f8fafc; }
+        .light { background-color: #f1f5f9; color: #1e293b; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .package-card { transition: 0.4s; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; }
+        .light .package-card { background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b; }
+        .insta-gradient { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+        .logo-img { mix-blend-mode: multiply; }
+        .dark .logo-img { filter: brightness(1.2); mix-blend-mode: normal; }
     </style>
 </head>
-<body>
+<body class="dark" id="mainBody">
 
-    <nav class="sticky top-0 z-50 glass-nav px-6 py-4">
+    <nav class="sticky top-0 z-50 glass px-6 py-4">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-6">
-                <img src="logo%20wave.png" alt="WaveForge" class="h-24 md:h-36 w-auto object-contain">
+                <img src="logo%20wave.png" alt="WaveForge Logo" class="h-28 md:h-36 w-auto object-contain logo-img">
                 <div class="hidden sm:block">
-                    <h1 class="text-3xl font-black text-white tracking-tighter">WaveForge</h1>
-                    <p class="text-[10px] text-blue-500 font-bold tracking-[0.3em] uppercase">Creative Byte Agency</p>
+                    <h1 class="text-4xl font-black text-blue-500 tracking-tighter">WaveForge</h1>
+                    <p class="text-xs uppercase tracking-[0.4em] opacity-50">Creative Byte Agency</p>
                 </div>
             </div>
-            <div class="flex items-center space-x-8 font-bold text-sm tracking-widest">
-                <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="hover:text-blue-500 uppercase">Portfolio</a>
-                <a href="#pricing" class="hover:text-blue-500 uppercase">Pricing</a>
-                <a href="mailto:waveforgecreative@gmail.com" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">HIRE US</a>
+            
+            <div class="flex items-center space-x-6 font-bold text-sm tracking-widest">
+                <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="hover:text-blue-500 hidden md:block uppercase">Portfolio</a>
+                <a href="#pricing" class="hover:text-blue-500 hidden md:block uppercase">Pricing</a>
+                <button onclick="toggleTheme()" class="bg-blue-600/20 p-3 rounded-full text-xl hover:scale-110 transition shadow-inner">🌓</button>
+                <a href="mailto:waveforgecreative@gmail.com" class="bg-blue-600 text-white px-8 py-3 rounded-full shadow-lg shadow-blue-500/20">HIRE US</a>
             </div>
         </div>
     </nav>
 
-    <header class="py-32 text-center px-6">
-        <h2 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter uppercase leading-none">
-            Wave<span class="text-blue-600">Forge</span>
+    <header class="py-32 text-center px-6 relative overflow-hidden">
+        <div class="absolute inset-0 -z-10 opacity-20">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[150px]"></div>
+        </div>
+        
+        <h2 class="text-7xl md:text-9xl font-black mb-8 leading-tight tracking-tighter">
+            Wave<span class="text-blue-500">Forge</span>
         </h2>
-        <p class="text-lg md:text-xl opacity-60 max-w-2xl mx-auto mb-12 font-light">
-            High-end wedding post-production agency serving filmmakers across the globe.
+        <p class="text-xl md:text-2xl opacity-70 max-w-3xl mx-auto mb-12 font-light italic">
+            "Your International Partner for Cinematic Wedding Excellence."
         </p>
+        
         <div class="flex flex-wrap justify-center gap-6">
-            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="magic-btn text-white px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition shadow-2xl">SEE OUR MAGIC</a>
-            <a href="#pricing" class="bg-white text-black px-12 py-5 rounded-2xl font-black text-xl hover:bg-gray-200 transition">VIEW PACKAGES</a>
+            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="insta-gradient px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition shadow-2xl">SEE OUR MAGIC</a>
+            <a href="#pricing" class="border-2 border-blue-600 px-10 py-5 rounded-2xl font-black text-xl hover:bg-blue-600 transition">VIEW PACKAGES</a>
         </div>
     </header>
 
-    <section id="pricing" class="container mx-auto py-20 px-6">
-        <h3 class="text-4xl font-black mb-16 text-center uppercase tracking-widest">Service Packages</h3>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="pkg-card p-12 text-center" onclick="openCheckout('Standard Edit', '150')">
-                <h4 class="text-xl font-bold opacity-60 mb-2 uppercase">Essential Edit</h4>
-                <p class="text-6xl font-black mb-8">$150</p>
-                <ul class="text-left space-y-4 mb-10 opacity-80">
-                    <li>✨ Highlight Video (3-5 min)</li>
-                    <li>✨ Basic Color Correction</li>
-                    <li>✨ 5 Business Days Delivery</li>
-                </ul>
-                <button class="w-full py-4 border border-blue-500 rounded-xl font-bold hover:bg-blue-500 transition">Get Started</button>
-            </div>
-
-            <div class="pkg-card pkg-featured p-12 text-center" onclick="openCheckout('Cinematic Premium', '300')">
-                <div class="best-seller-badge">Best Seller</div>
-                <h4 class="text-xl font-bold mb-2 uppercase">Cinematic Premium</h4>
-                <p class="text-6xl font-black mb-8">$300</p>
-                <ul class="text-left space-y-4 mb-10">
-                    <li>✨ Cinematic Movie (20 min)</li>
-                    <li>✨ High-End Color Grading</li>
-                    <li>✨ Sound Design & Mixing</li>
-                    <li>✨ 3 Days Fast-Track Delivery</li>
-                </ul>
-                <button class="w-full py-4 bg-white text-blue-600 rounded-xl font-black hover:bg-gray-100 transition">Choose Premium</button>
-            </div>
-
-            <div class="pkg-card p-12 text-center" onclick="openCheckout('Elite Storytelling', '500')">
-                <h4 class="text-xl font-bold opacity-60 mb-2 uppercase">Elite Story</h4>
-                <p class="text-6xl font-black mb-8">$500</p>
-                <ul class="text-left space-y-4 mb-10 opacity-80">
-                    <li>✨ 40-60 Min Full Feature</li>
-                    <li>✨ Multicam Synchronization</li>
-                    <li>✨ Premium Master Grading</li>
-                    <li>✨ Priority 24/7 Support</li>
-                </ul>
-                <button class="w-full py-4 border border-blue-500 rounded-xl font-bold hover:bg-blue-500 transition">Get Elite</button>
+    <section class="container mx-auto py-20 px-6">
+        <div class="package-card p-10 md:p-20 text-center bg-blue-600/5">
+            <h3 class="text-4xl font-black mb-8 uppercase tracking-widest text-blue-500">About Us</h3>
+            <p class="text-xl opacity-80 leading-relaxed max-w-4xl mx-auto">
+                WaveForge is a premium post-production agency specializing in high-end wedding filmmaking. We provide international-grade editing, cinematic color grading, and multicam storytelling. Let us forge your memories into timeless masterpieces.
+            </p>
+            <div class="mt-10 flex flex-col items-center">
+                <p class="text-sm opacity-50 uppercase tracking-widest mb-2 italic">Connect via Email</p>
+                <a href="mailto:waveforgecreative@gmail.com" class="text-2xl font-black text-blue-500 border-b-2 border-blue-500 pb-1 hover:text-white transition">waveforgecreative@gmail.com</a>
             </div>
         </div>
     </section>
 
-    <div id="checkoutModal" class="modal">
-        <div class="modal-content">
-            <div id="checkoutForm">
-                <h3 class="text-2xl font-black text-blue-500 mb-2" id="pkgTitle">Package</h3>
-                <p class="text-5xl font-black mb-8" id="pkgPrice">$000</p>
-                
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700 mb-6 text-sm leading-relaxed">
-                    <p class="text-yellow-500 font-bold mb-2 uppercase">Payment Details</p>
-                    <p>International: <b>Wise / Remitly</b></p>
-                    <p>Bangladesh: <b>bKash Wallet - 01825221830</b></p>
-                </div>
-
-                <input type="text" id="clientName" placeholder="Enter Your Name" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 mb-4 outline-none">
-                <input type="text" id="trxId" placeholder="Transaction ID / Mobile Number" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 mb-6 outline-none text-center font-bold text-blue-400">
-                
-                <button onclick="confirmOrder()" class="w-full bg-blue-600 py-4 rounded-xl font-black text-white hover:bg-blue-700 transition">PLACE ORDER</button>
-                <button onclick="closeModal()" class="mt-4 block mx-auto text-sm opacity-50">Cancel</button>
+    <section id="pricing" class="container mx-auto py-24 px-6">
+        <h3 class="text-5xl font-black mb-16 text-center tracking-tighter uppercase underline decoration-blue-600 underline-offset-8">Video Packages</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="package-card p-10">
+                <h4 class="text-xl font-bold opacity-60 mb-2 uppercase">Standard</h4>
+                <p class="text-5xl font-black mb-8 text-blue-500">$150</p>
+                <ul class="space-y-4 mb-12 text-lg opacity-80">
+                    <li>✓ 3-4 Min Highlight</li>
+                    <li>✓ 1 Hour Full Film</li>
+                    <li>✓ Basic Color Correction</li>
+                    <li>✓ Smooth Transitions</li>
+                </ul>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 rounded-xl border-2 border-blue-600 font-bold hover:bg-blue-600 transition">Book Now</a>
             </div>
-
-            <div id="invoiceBox">
-                <div style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">
-                    <h2 style="font-weight: 900; font-size: 20px;">WAVEFORGE INVOICE</h2>
-                </div>
-                <p><b>DATE:</b> <span id="invDate"></span></p>
-                <p><b>CLIENT:</b> <span id="invName"></span></p>
-                <p><b>SERVICE:</b> <span id="invPkg"></span></p>
-                <p><b>TOTAL PAID:</b> <span id="invPrice"></span></p>
-                <p><b>TRX ID:</b> <span id="invTrx"></span></p>
-                <div style="margin-top: 30px; text-align: center; border-top: 1px solid #ddd; pt: 10px;">
-                    <p style="font-weight: bold; color: green;">PAYMENT VERIFIED ✅</p>
-                    <p style="font-size: 10px;">Thank you for choosing WaveForge</p>
-                </div>
-                <button onclick="window.print()" class="mt-6 w-full py-3 bg-black text-white rounded-lg font-bold text-xs">DOWNLOAD PDF / PRINT</button>
-                <button onclick="closeModal()" class="mt-2 w-full py-2 text-xs opacity-50">CLOSE</button>
+            <div class="package-card p-10 border-blue-500 bg-blue-600/10 relative">
+                <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 px-6 py-1 rounded-full text-[10px] font-black">PREMIUM CHOICE</span>
+                <h4 class="text-xl font-bold text-blue-400 mb-2 uppercase tracking-widest">Cinematic Pro</h4>
+                <p class="text-5xl font-black mb-8 text-white">$250</p>
+                <ul class="space-y-4 mb-12 text-lg">
+                    <li>✓ Signature Highlight Film</li>
+                    <li>✓ 1 Hour Pro Full Film</li>
+                    <li>✓ Advanced Color Grading</li>
+                    <li>✓ Pro Sound Mix & SFX</li>
+                </ul>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 bg-blue-600 rounded-xl font-bold hover:bg-blue-700 transition">Book Now</a>
+            </div>
+            <div class="package-card p-10">
+                <h4 class="text-xl font-bold opacity-60 mb-2 uppercase">Elite Story</h4>
+                <p class="text-5xl font-black mb-8 text-blue-500">$320</p>
+                <ul class="space-y-4 mb-12 text-lg opacity-80">
+                    <li>✓ 4-7 Min Premium Highlight</li>
+                    <li>✓ Full Multicam Story Film</li>
+                    <li>✓ Masterful Storytelling Edit</li>
+                    <li>✓ High-End Color Grading</li>
+                </ul>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 rounded-xl border-2 border-blue-600 font-bold hover:bg-blue-600 transition">Book Now</a>
             </div>
         </div>
-    </div>
 
-    <footer class="py-24 text-center border-t border-slate-900 mt-20">
-        <img src="logo%20wave.png" alt="WaveForge" class="h-32 mx-auto mb-8">
-        <p class="text-[10px] opacity-20 tracking-[1.5em] uppercase font-bold">© 2026 WaveForge Creative Agency</p>
+        <h3 class="text-5xl font-black mt-32 mb-16 text-center tracking-tighter uppercase underline decoration-blue-600 underline-offset-8">Photo Packages</h3>
+        <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+            <div class="package-card p-12 text-center">
+                <h4 class="text-2xl font-bold mb-2">Basic Edit</h4>
+                <p class="text-5xl font-black text-blue-500 mb-8">$100</p>
+                <p class="opacity-60 text-lg mb-8">Full wedding album color correction & consistency.</p>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 bg-slate-800 rounded-xl font-bold text-white hover:bg-slate-700 transition">Hire Now</a>
+            </div>
+            <div class="package-card p-12 text-center border-blue-500">
+                <h4 class="text-2xl font-bold text-blue-400 mb-2">Premium Retouch</h4>
+                <p class="text-5xl font-black text-white mb-8">$180</p>
+                <p class="opacity-60 text-lg mb-8">100-120 High-end skin retouch & object removal.</p>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition">Hire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 text-center">
+        <div class="inline-flex flex-col items-center glass px-10 py-6 rounded-3xl border border-blue-500/20">
+            <p class="text-xs uppercase tracking-[0.3em] font-bold opacity-50 mb-3 text-blue-400">Total Profile Visits</p>
+            <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=waveforgecreative&style=0036&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" />
+            </a>
+            <p class="text-[10px] mt-2 opacity-30 italic">Live tracking enabled</p>
+        </div>
+    </section>
+
+    <footer class="py-24 text-center border-t border-slate-800">
+        <img src="logo%20wave.png" alt="Logo" class="h-40 mx-auto mb-10 logo-img">
+        <h5 class="text-5xl font-black text-blue-600 mb-6 tracking-tighter uppercase">WaveForge</h5>
+        <div class="flex flex-wrap justify-center gap-10 font-black text-lg mb-10">
+            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="hover:text-blue-500">INSTAGRAM</a>
+            <a href="mailto:waveforgecreative@gmail.com" class="hover:text-blue-500">EMAIL</a>
+        </div>
+        <p class="text-[10px] opacity-20 tracking-[1.5em] uppercase italic">© 2026 WaveForge Agency | All Rights Reserved</p>
     </footer>
 
     <script>
-        function openCheckout(title, price) {
-            document.getElementById('pkgTitle').innerText = title;
-            document.getElementById('pkgPrice').innerText = "$" + price;
-            document.getElementById('checkoutModal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('checkoutModal').style.display = 'none';
-            document.getElementById('checkoutForm').style.display = 'block';
-            document.getElementById('invoiceBox').style.display = 'none';
-        }
-
-        function confirmOrder() {
-            const name = document.getElementById('clientName').value;
-            const trx = document.getElementById('trxId').value;
-            if(!name || !trx) { alert("Please complete details!"); return; }
-
-            // Generate Invoice
-            document.getElementById('invName').innerText = name;
-            document.getElementById('invPkg').innerText = document.getElementById('pkgTitle').innerText;
-            document.getElementById('invPrice').innerText = document.getElementById('pkgPrice').innerText;
-            document.getElementById('invTrx').innerText = trx;
-            document.getElementById('invDate').innerText = new Date().toLocaleDateString();
-
-            document.getElementById('checkoutForm').style.display = 'none';
-            document.getElementById('invoiceBox').style.display = 'block';
+        function toggleTheme() {
+            const body = document.getElementById('mainBody');
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
         }
     </script>
 </body>
