@@ -9,84 +9,96 @@
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; scroll-behavior: smooth; }
         .glass-nav { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        
-        /* Hero section text gradient */
-        .hero-title { font-size: 5rem; line-height: 1; font-weight: 900; letter-spacing: -0.05em; }
-        @media (min-width: 768px) { .hero-title { font-size: 8rem; } }
-        
-        /* Buttons like screenshot */
+        .hero-title { font-size: 4rem; line-height: 1; font-weight: 900; letter-spacing: -0.05em; }
+        @media (min-width: 768px) { .hero-title { font-size: 7rem; } }
         .btn-magic { background: linear-gradient(90deg, #f97316, #db2777); transition: 0.3s; }
-        .btn-magic:hover { transform: scale(1.05); opacity: 0.9; }
-        
-        /* Package Cards like screenshot */
-        .pkg-card { background: #ffffff; color: #1e293b; border-radius: 24px; transition: 0.4s; padding: 40px; }
-        .pkg-card.premium { background: #2563eb; color: #ffffff; transform: scale(1.05); border: none; }
-        .best-seller { background: #fbbf24; color: #000; padding: 4px 16px; border-radius: 8px; font-weight: 900; font-size: 12px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); }
-
-        /* Modal styling */
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; align-items: center; justify-content: center; }
-        .modal-content { background: #0f172a; padding: 40px; border-radius: 24px; max-width: 500px; width: 90%; border: 1px solid #3b82f6; }
+        .pkg-card { background: #ffffff; color: #1e293b; border-radius: 24px; transition: 0.4s; padding: 35px; cursor: pointer; position: relative; height: 100%; border: 1px solid transparent; }
+        .pkg-card:hover { transform: translateY(-10px); }
+        .pkg-card.premium { background: #2563eb; color: #ffffff; border: none; }
+        .best-seller { background: #fbbf24; color: #000; padding: 4px 16px; border-radius: 8px; font-weight: 900; font-size: 11px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; }
+        .modal-content { background: #0f172a; padding: 35px; border-radius: 24px; max-width: 500px; width: 90%; border: 1px solid #3b82f6; }
         #invoiceBox { display: none; background: white; color: black; padding: 30px; border-radius: 12px; font-family: 'Courier New', monospace; }
+        @media print { .no-print { display: none; } }
     </style>
 </head>
 <body>
 
     <nav class="sticky top-0 z-50 glass-nav px-6 py-4">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-6">
-                <img src="logo%20wave.png" alt="WaveForge" class="h-16 md:h-24 w-auto bg-white p-2 rounded">
+            <div class="flex items-center space-x-4">
+                <img src="logo%20wave.png" alt="WaveForge" class="h-20 md:h-28 w-auto">
                 <div class="hidden sm:block">
+                    <h1 class="text-2xl font-black text-blue-500 uppercase tracking-tighter">WaveForge</h1>
                     <p class="text-[10px] text-gray-400 font-bold tracking-[0.3em] uppercase">Creative Byte Agency</p>
                 </div>
             </div>
-            <div class="flex items-center space-x-8 font-bold text-sm tracking-widest uppercase">
-                <a href="#about" class="hover:text-blue-500">About</a>
+            <div class="flex items-center space-x-6 font-bold text-xs tracking-widest uppercase">
                 <a href="#portfolio" class="hover:text-blue-500">Portfolio</a>
                 <a href="#pricing" class="hover:text-blue-500">Pricing</a>
-                <button class="bg-blue-600 text-white px-8 py-3 rounded-full">Hire Us</button>
+                <a href="mailto:waveforgecreative@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:scale-105 transition">Hire Us</a>
             </div>
         </div>
     </nav>
 
-    <header class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6">
-        <h2 class="hero-title uppercase mb-8">
-            WE FORGE <span class="text-blue-600">CINEMA.</span>
-        </h2>
-        <p class="text-lg md:text-xl opacity-60 max-w-2xl mx-auto mb-12 font-light">
-            High-end wedding post-production agency serving filmmakers across the globe.
-        </p>
+    <header class="min-h-[70vh] flex flex-col items-center justify-center text-center px-6">
+        <h2 class="hero-title uppercase mb-6">WE FORGE <span class="text-blue-600">CINEMA.</span></h2>
+        <p class="text-lg opacity-60 max-w-2xl mx-auto mb-10 font-light">High-end wedding post-production agency serving filmmakers across the globe.</p>
         <div class="flex flex-wrap justify-center gap-6">
-            <a href="#portfolio" class="btn-magic text-white px-10 py-5 rounded-2xl font-black text-xl shadow-2xl">SEE OUR MAGIC</a>
-            <a href="#pricing" class="bg-white text-black px-10 py-5 rounded-2xl font-black text-xl">VIEW PACKAGES</a>
+            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="btn-magic text-white px-10 py-4 rounded-2xl font-black text-lg">SEE OUR MAGIC</a>
+            <a href="#pricing" class="bg-white text-black px-10 py-4 rounded-2xl font-black text-lg">VIEW PACKAGES</a>
         </div>
     </header>
 
-    <section id="pricing" class="container mx-auto py-32 px-6">
-        <h3 class="text-4xl font-black mb-20 text-center uppercase tracking-widest">Service Packages</h3>
-        
-        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
-            <div class="pkg-card relative text-center" onclick="openCheckout('Essential Edit', '150')">
-                <h4 class="text-xl font-bold opacity-60 mb-2 uppercase">Essential Edit</h4>
-                <p class="text-6xl font-black mb-8">$150</p>
-                <ul class="text-left space-y-4 mb-10 opacity-80">
-                    <li>✨ Highlight Video (3-5 min)</li>
-                    <li>✨ Basic Color Correction</li>
-                    <li>✨ 5 Business Days Delivery</li>
+    <section id="pricing" class="container mx-auto py-24 px-6">
+        <h3 class="text-4xl font-black mb-16 text-center uppercase tracking-widest text-blue-500">Video Packages</h3>
+        <div class="grid md:grid-cols-3 gap-8 mb-24">
+            <div class="pkg-card" onclick="openCheckout('Standard Edit', '150')">
+                <h4 class="text-lg font-bold opacity-60 mb-1 uppercase">Standard</h4>
+                <p class="text-5xl font-black mb-6 text-blue-600">$150</p>
+                <ul class="text-left space-y-3 mb-8 text-sm">
+                    <li>✓ 3-4 Min Highlight</li>
+                    <li>✓ 1 Hour Full Film</li>
+                    <li>✓ Color Correction</li>
                 </ul>
-                <button class="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-xl font-black uppercase hover:bg-blue-50">Get Started</button>
+                <button class="w-full py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-black uppercase text-xs">Get Started</button>
             </div>
-
-            <div class="pkg-card premium relative text-center" onclick="openCheckout('Cinematic Premium', '300')">
+            <div class="pkg-card premium" onclick="openCheckout('Cinematic Pro', '250')">
                 <div class="best-seller">BEST SELLER</div>
-                <h4 class="text-xl font-bold mb-2 uppercase">Cinematic Premium</h4>
-                <p class="text-6xl font-black mb-8">$300</p>
-                <ul class="text-left space-y-4 mb-10">
-                    <li>✨ Cinematic Movie (20 min)</li>
-                    <li>✨ High-End Color Grading</li>
-                    <li>✨ Sound Design & Mixing</li>
-                    <li>✨ 3 Days Fast-Track Delivery</li>
+                <h4 class="text-lg font-bold mb-1 uppercase">Cinematic Pro</h4>
+                <p class="text-5xl font-black mb-6 text-white">$250</p>
+                <ul class="text-left space-y-3 mb-8 text-sm">
+                    <li>✓ Signature Highlight Film</li>
+                    <li>✓ Advanced Color Grading</li>
+                    <li>✓ Pro Sound Mix & SFX</li>
                 </ul>
-                <button class="w-full py-4 bg-white text-blue-600 rounded-xl font-black uppercase shadow-lg">Choose Premium</button>
+                <button class="w-full py-3 bg-white text-blue-600 rounded-xl font-black uppercase text-xs">Choose Pro</button>
+            </div>
+            <div class="pkg-card" onclick="openCheckout('Elite Story', '320')">
+                <h4 class="text-lg font-bold opacity-60 mb-1 uppercase">Elite Story</h4>
+                <p class="text-5xl font-black mb-6 text-blue-600">$320</p>
+                <ul class="text-left space-y-3 mb-8 text-sm">
+                    <li>✓ 4-7 Min Premium Highlight</li>
+                    <li>✓ Full Multicam Film</li>
+                    <li>✓ Masterful Storytelling</li>
+                </ul>
+                <button class="w-full py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-black uppercase text-xs">Get Elite</button>
+            </div>
+        </div>
+
+        <h3 class="text-4xl font-black mb-16 text-center uppercase tracking-widest text-blue-500">Photo Packages</h3>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="pkg-card" onclick="openCheckout('Photo Basic', '100')">
+                <h4 class="text-lg font-bold opacity-60 mb-1 uppercase">Photo Basic</h4>
+                <p class="text-5xl font-black mb-6 text-blue-600">$100</p>
+                <p class="text-sm opacity-70 mb-8">Full wedding album color correction & consistency.</p>
+                <button class="w-full py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-black uppercase text-xs">Hire Now</button>
+            </div>
+            <div class="pkg-card premium" onclick="openCheckout('Photo Premium', '180')">
+                <h4 class="text-lg font-bold mb-1 uppercase">Photo Premium</h4>
+                <p class="text-5xl font-black mb-6 text-white">$180</p>
+                <p class="text-sm mb-8">120 High-end skin retouch & object removal.</p>
+                <button class="w-full py-3 bg-white text-blue-600 rounded-xl font-black uppercase text-xs">Hire Now</button>
             </div>
         </div>
     </section>
@@ -94,36 +106,45 @@
     <div id="checkoutModal" class="modal">
         <div class="modal-content">
             <div id="checkoutForm">
-                <h3 class="text-2xl font-black text-blue-500 mb-2" id="pkgTitle">Package</h3>
-                <p class="text-4xl font-black mb-8" id="pkgPrice">$0</p>
-                <div class="bg-slate-900 p-4 rounded-xl mb-6 text-sm">
-                    <p class="text-yellow-500 font-bold mb-2 uppercase">Payment Details</p>
-                    <p>International: <b>Wise / Remitly</b></p>
-                    <p>Bangladesh: <b>bKash Wallet - 01825221830</b></p>
+                <h3 class="text-2xl font-black text-blue-500 mb-2 uppercase" id="pkgTitle">Package</h3>
+                <p class="text-4xl font-black mb-6" id="pkgPrice">$0</p>
+                <div class="bg-slate-900 p-5 rounded-2xl mb-6 text-sm border border-slate-800">
+                    <p class="text-yellow-500 font-bold mb-2 uppercase tracking-tighter">Payment Details</p>
+                    <p class="opacity-80">International: <b>Wise / Remitly</b></p>
+                    <p class="opacity-80">Bangladesh: <b>bKash - 01825221830</b></p>
                 </div>
-                <input type="text" id="clientName" placeholder="Your Name" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 mb-4 outline-none">
+                <input type="text" id="clientName" placeholder="Your Full Name" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 mb-4 outline-none focus:border-blue-500 text-white">
                 <input type="text" id="trxId" placeholder="Trx ID / bKash Number" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 mb-6 outline-none text-center font-bold text-blue-400">
-                <button onclick="confirmOrder()" class="w-full bg-blue-600 py-4 rounded-xl font-black">PLACE ORDER</button>
-                <button onclick="closeModal()" class="mt-4 block mx-auto text-sm opacity-50">Cancel</button>
+                <button onclick="confirmOrder()" class="w-full bg-blue-600 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-blue-700">PLACE ORDER</button>
+                <button onclick="closeModal()" class="mt-4 block mx-auto text-sm opacity-40 hover:opacity-100">Cancel Order</button>
             </div>
 
             <div id="invoiceBox">
-                <div style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">
-                    <h2 style="font-weight: 900;">WAVEFORGE INVOICE</h2>
+                <div class="flex justify-between border-b-2 border-black pb-3 mb-4">
+                    <h2 class="font-black text-lg">WAVEFORGE RECEIPT</h2>
+                    <p class="text-xs" id="invDate"></p>
                 </div>
-                <p><b>DATE:</b> <span id="invDate"></span></p>
-                <p><b>CLIENT:</b> <span id="invName"></span></p>
-                <p><b>SERVICE:</b> <span id="invPkg"></span></p>
-                <p><b>TOTAL:</b> <span id="invPrice"></span></p>
-                <p><b>TRX ID:</b> <span id="invTrx"></span></p>
-                <div style="margin-top: 30px; text-align: center; border-top: 1px solid #ddd; pt: 10px;">
-                    <p style="font-weight: bold; color: green;">PAID SUCCESSFULLY ✅</p>
+                <div class="space-y-2 text-sm">
+                    <p><b>INVOICE NO:</b> #WF-<span id="invId"></span></p>
+                    <p><b>CLIENT:</b> <span id="invName"></span></p>
+                    <p><b>SERVICE:</b> <span id="invPkg"></span></p>
+                    <p><b>TOTAL PAID:</b> <span id="invPrice"></span></p>
+                    <p><b>TRX ID:</b> <span id="invTrx"></span></p>
                 </div>
-                <button onclick="window.print()" class="mt-6 w-full py-2 bg-black text-white rounded font-bold text-xs uppercase">Print/Save PDF</button>
-                <button onclick="closeModal()" class="mt-2 w-full py-2 border border-black rounded font-bold text-xs uppercase">Close</button>
+                <div class="mt-8 pt-4 border-t border-dashed border-gray-400 text-center">
+                    <p class="font-bold text-green-600">VERIFIED PAYMENT ✅</p>
+                    <p class="text-[10px] mt-1 opacity-60">WaveForge Creative Byte Agency</p>
+                </div>
+                <button onclick="window.print()" class="mt-6 w-full py-2 bg-black text-white rounded font-bold text-xs uppercase no-print">Print / Save PDF</button>
+                <button onclick="closeModal()" class="mt-2 w-full py-2 border border-black rounded font-bold text-xs uppercase no-print">Done</button>
             </div>
         </div>
     </div>
+
+    <footer class="py-20 text-center border-t border-slate-900">
+        <img src="logo%20wave.png" alt="WaveForge" class="h-32 mx-auto mb-6">
+        <p class="text-[10px] opacity-20 tracking-[1.5em] uppercase font-bold italic">© 2026 WaveForge Agency</p>
+    </footer>
 
     <script>
         function openCheckout(title, price) {
@@ -136,6 +157,8 @@
             document.getElementById('checkoutModal').style.display = 'none';
             document.getElementById('checkoutForm').style.display = 'block';
             document.getElementById('invoiceBox').style.display = 'none';
+            document.getElementById('clientName').value = "";
+            document.getElementById('trxId').value = "";
         }
 
         function confirmOrder() {
@@ -148,6 +171,7 @@
             document.getElementById('invPrice').innerText = document.getElementById('pkgPrice').innerText;
             document.getElementById('invTrx').innerText = trx;
             document.getElementById('invDate').innerText = new Date().toLocaleDateString();
+            document.getElementById('invId').innerText = Math.floor(1000 + Math.random() * 9000);
 
             document.getElementById('checkoutForm').style.display = 'none';
             document.getElementById('invoiceBox').style.display = 'block';
