@@ -3,168 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waveforge Creative | Cinematic Wedding Editing</title>
+    <title>Waveforge Creative | Global Wedding Editing Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: 0.3s; }
-        .dark { background-color: #0f172a; color: #f8fafc; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: 0.3s; scroll-behavior: smooth; }
+        .dark { background-color: #050a15; color: #e2e8f0; }
         .light { background-color: #ffffff; color: #1e293b; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .package-card:hover { transform: translateY(-10px); transition: 0.4s ease; border-color: #3b82f6; }
-        .insta-btn:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; border: none; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .package-card { transition: 0.4s; border: 1px solid rgba(59, 130, 246, 0.1); }
+        .package-card:hover { transform: translateY(-12px); border-color: #3b82f6; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); }
+        .insta-gradient { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
     </style>
 </head>
 <body class="dark" id="bodyTag">
 
     <nav class="sticky top-0 z-50 p-6 glass border-b border-slate-800">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="logo%20wave.png" alt="Waveforge Logo" class="h-20 w-auto object-contain">
-                <div>
-                    <h1 class="text-3xl font-black tracking-tighter text-blue-500">WAVEFORGE</h1>
-                    <p class="text-[10px] tracking-[0.3em] uppercase opacity-60">Creative Byte</p>
-                </div>
+            <div class="flex flex-col items-start">
+                <img src="logo%20wave.png" alt="Waveforge Logo" class="h-28 md:h-32 w-auto object-contain mb-2">
+                <span class="text-xs tracking-[0.4em] uppercase opacity-50 ml-2">Creative Byte Agency</span>
             </div>
             
-            <div class="hidden md:flex items-center space-x-8 font-semibold">
+            <div class="hidden md:flex items-center space-x-10 font-bold uppercase text-sm tracking-widest">
                 <a href="#about" class="hover:text-blue-500 transition">About</a>
                 <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="hover:text-blue-500 transition">Portfolio</a>
                 <a href="#services" class="hover:text-blue-500 transition">Pricing</a>
-                <a href="mailto:waveforgecreative@gmail.com" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 shadow-lg">Contact Us</a>
-                <button onclick="toggleTheme()" class="p-2 rounded-full bg-slate-800 text-yellow-400">🌙/☀️</button>
+                <button onclick="toggleTheme()" class="text-xl">🌓</button>
+                <a href="mailto:waveforgecreative@gmail.com" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 shadow-lg transition">Hire Us</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative py-32 px-6 text-center overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-20">
-            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-600 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-10 right-10 w-72 h-72 bg-purple-600 rounded-full blur-[120px]"></div>
+    <header class="relative py-32 px-6 text-center">
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]"></div>
         </div>
         
-        <div class="relative z-10">
-            <h2 class="text-6xl md:text-8xl font-black mb-6 tracking-tight">Forging <span class="text-blue-500">Cinematic</span> Memories</h2>
-            <p class="text-xl opacity-70 max-w-2xl mx-auto mb-10">High-end wedding video and photo editing for global clients. We turn raw footage into timeless masterpieces.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl transition-all">View Packages</a>
-                <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="insta-btn border-2 border-slate-600 px-10 py-4 rounded-xl font-bold text-lg transition-all">Instagram Portfolio</a>
-            </div>
+        <h2 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter">WE FORGE <span class="text-blue-600">CINEMA.</span></h2>
+        <p class="text-xl opacity-60 max-w-2xl mx-auto mb-12 font-light">High-end wedding post-production agency serving filmmakers across the globe.</p>
+        
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="insta-gradient text-white px-12 py-5 rounded-2xl font-black text-xl shadow-2xl hover:scale-105 transition">SEE OUR MAGIC</a>
+            <a href="#services" class="bg-white text-black px-12 py-5 rounded-2xl font-black text-xl hover:bg-blue-500 hover:text-white transition">VIEW PACKAGES</a>
         </div>
     </header>
 
     <section id="about" class="container mx-auto py-24 px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="glass p-10 rounded-3xl">
-                <h3 class="text-4xl font-bold mb-6 text-blue-500">Who We Are</h3>
-                <p class="text-lg opacity-80 leading-relaxed mb-6">
-                    Waveforge Creative is a premier editing agency specialized in international wedding filmmaking. We don't just edit; we tell stories. With a deep understanding of rhythm, color, and emotion, we serve videographers worldwide to deliver perfection.
+        <div class="glass p-12 rounded-[40px] grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-4xl font-black mb-6">About <span class="text-blue-600">Waveforge</span></h3>
+                <p class="text-lg opacity-70 leading-relaxed mb-6">
+                    We are a specialized post-production agency dedicated to wedding filmmakers. Our mission is to take the heavy lifting of editing off your shoulders while delivering a cinematic experience that exceeds expectations. From intricate storytelling to world-class color grading, we forge every frame with passion.
                 </p>
-                <div class="space-y-4 font-semibold">
-                    <div class="flex items-center space-x-3">✨ <span class="opacity-90">International Grade Color Grading</span></div>
-                    <div class="flex items-center space-x-3">✨ <span class="opacity-90">Cinematic Storytelling & Sound Design</span></div>
-                    <div class="flex items-center space-x-3">✨ <span class="opacity-90">High-End Photo Retouching</span></div>
+                <div class="grid grid-cols-2 gap-4 text-sm font-bold opacity-80">
+                    <div class="flex items-center">⚡ Fast Delivery</div>
+                    <div class="flex items-center">🎨 Cinematic Grading</div>
+                    <div class="flex items-center">🔊 Sound Design</div>
+                    <div class="flex items-center">🌍 Global Standards</div>
                 </div>
             </div>
-            <div class="text-center md:text-left">
-                <h3 class="text-5xl font-black mb-4">Ready to elevate your content?</h3>
-                <p class="text-xl opacity-60 mb-8">Let us handle the post-production while you focus on capturing the beauty.</p>
-                <a href="mailto:waveforgecreative@gmail.com" class="text-2xl font-bold text-blue-500 underline decoration-wavy">waveforgecreative@gmail.com</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="track" class="py-20 px-6">
-        <div class="max-w-3xl mx-auto glass p-10 rounded-[40px] border-t-4 border-blue-500">
-            <h3 class="text-3xl font-bold mb-8 text-center italic">Live Project Tracker</h3>
-            <div class="flex gap-4">
-                <input type="text" id="orderId" placeholder="Order ID (e.g. WF-101)" class="flex-1 p-4 bg-slate-900 border-2 border-slate-700 rounded-2xl outline-none focus:border-blue-500 font-bold">
-                <button onclick="trackProject()" class="bg-blue-600 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">Track</button>
-            </div>
-            <div id="statusResult" class="mt-10 hidden text-center animate-pulse">
-                <p id="statusLabel" class="text-2xl font-black text-blue-400"></p>
-                <div class="w-full bg-slate-800 h-4 mt-4 rounded-full overflow-hidden">
-                    <div id="progressBar" class="bg-blue-500 h-full transition-all duration-1000"></div>
-                </div>
+            <div class="bg-blue-600/10 p-10 rounded-3xl border border-blue-500/20 text-center">
+                <p class="text-2xl font-light italic mb-4">"Your footage, our vision. Timeless memories."</p>
+                <p class="font-bold text-blue-500">— Waveforge Creative Team</p>
             </div>
         </div>
     </section>
 
     <section id="services" class="container mx-auto py-24 px-6">
-        <div class="text-center mb-16">
-            <h3 class="text-5xl font-black mb-4">Video Editing Packages</h3>
-            <p class="opacity-60">Tailored cinematic services for global videographers</p>
-        </div>
-        
+        <h3 class="text-5xl font-black mb-16 text-center">Video Editing <span class="text-blue-500">Suites</span></h3>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="package-card glass p-8 rounded-3xl border border-slate-800">
-                <h4 class="text-2xl font-bold mb-2">Standard Film</h4>
-                <p class="text-4xl font-black text-blue-500 mb-6">$150</p>
-                <ul class="space-y-4 opacity-80 mb-10">
-                    <li>🎬 3-4 Min Highlight</li>
-                    <li>🎞️ 1 Hour Full Wedding Film</li>
-                    <li>🎨 Basic Color Correction</li>
-                    <li>🎵 Light Transitions & Sound</li>
+            <div class="package-card glass p-10 rounded-[35px]">
+                <h4 class="text-xl font-bold opacity-50 mb-2 uppercase tracking-widest">Standard Film</h4>
+                <p class="text-5xl font-black mb-8">$150</p>
+                <ul class="space-y-5 text-lg mb-12">
+                    <li>🔹 3-4 Min Highlight</li>
+                    <li>🔹 1 Hour Full Film</li>
+                    <li>🔹 Basic Color Correction</li>
+                    <li>🔹 Smooth Transitions</li>
+                    <li>🔹 Clean Audio Sync</li>
                 </ul>
-                <button class="w-full py-4 border-2 border-blue-600 rounded-xl font-bold hover:bg-blue-600">Choose Standard</button>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 rounded-xl border-2 border-blue-600 font-bold hover:bg-blue-600 transition">Select Plan</a>
             </div>
 
-            <div class="package-card glass p-8 rounded-3xl border-2 border-blue-500 bg-blue-600/10 scale-105">
-                <h4 class="text-2xl font-bold mb-2 text-blue-400">Cinematic Pro</h4>
-                <p class="text-4xl font-black text-white mb-6">$250</p>
-                <ul class="space-y-4 mb-10">
-                    <li>🌟 Advanced Cinematic Edit</li>
-                    <li>🎬 3-4 Min Signature Highlight</li>
-                    <li>🎞️ 1 Hour Full Film</li>
-                    <li>🎨 Advanced Color Grading</li>
-                    <li>🔊 Professional Sound Mix</li>
+            <div class="package-card glass p-10 rounded-[35px] bg-blue-600/5 border-blue-500/50 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-blue-600 text-[10px] px-4 py-1 font-black uppercase tracking-tighter">Popular</div>
+                <h4 class="text-xl font-bold text-blue-400 mb-2 uppercase tracking-widest">Cinematic Pro</h4>
+                <p class="text-5xl font-black mb-8">$250</p>
+                <ul class="space-y-5 text-lg mb-12">
+                    <li>🔹 Cinematic Pro Highlight</li>
+                    <li>🔹 1 Hour Pro Full Film</li>
+                    <li>🔹 Advanced Color Grading</li>
+                    <li>🔹 Sound Mix & SFX</li>
+                    <li>🔹 Story-driven Edit</li>
                 </ul>
-                <button class="w-full py-4 bg-blue-600 rounded-xl font-bold hover:bg-blue-700">Recommended</button>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 bg-blue-600 rounded-xl font-bold hover:bg-blue-700 transition">Get Started</a>
             </div>
 
-            <div class="package-card glass p-8 rounded-3xl border border-slate-800">
-                <h4 class="text-2xl font-bold mb-2">Multicam Story</h4>
-                <p class="text-4xl font-black text-blue-500 mb-6">$320</p>
-                <ul class="space-y-4 opacity-80 mb-10">
-                    <li>📽️ Multicam Storytelling</li>
-                    <li>🎬 4-7 Min Premium Highlight</li>
-                    <li>🎞️ Full Length Movie (Custom)</li>
-                    <li>🎭 Best-in-class Grading</li>
-                    <li>🔥 Best Creative Transitions</li>
+            <div class="package-card glass p-10 rounded-[35px]">
+                <h4 class="text-xl font-bold opacity-50 mb-2 uppercase tracking-widest">Elite Storyteller</h4>
+                <p class="text-5xl font-black mb-8">$320</p>
+                <ul class="space-y-5 text-lg mb-12">
+                    <li>🔹 4-7 Min Premium Highlight</li>
+                    <li>🔹 Multicam Full Story Film</li>
+                    <li>🔹 Masterful Storytelling</li>
+                    <li>🔹 High-End Color Grading</li>
+                    <li>🔹 Best Creative Assets</li>
                 </ul>
-                <button class="w-full py-4 border-2 border-blue-600 rounded-xl font-bold hover:bg-blue-600">Go Elite</button>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 border-2 border-blue-600 font-bold hover:bg-blue-600 transition">Go Elite</a>
             </div>
         </div>
     </section>
 
-    <section class="container mx-auto py-24 px-6 bg-blue-600/5 rounded-[50px]">
-        <div class="text-center mb-16">
-            <h3 class="text-5xl font-black mb-4">Photo Editing</h3>
-        </div>
-        <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-            <div class="glass p-8 rounded-3xl package-card border border-slate-800">
-                <h4 class="text-2xl font-bold">Basic Album</h4>
-                <p class="text-4xl font-black text-blue-500 my-4">$100</p>
-                <p class="opacity-70 mb-6">Full Album Color Correction & Exposure Balancing for a consistent look.</p>
-                <button class="w-full py-3 bg-slate-800 rounded-lg font-bold">Select Basic</button>
+    <section class="container mx-auto py-24 px-6 bg-white/5 rounded-[60px] mb-20">
+        <h3 class="text-5xl font-black mb-16 text-center">Photo <span class="text-blue-500">Retouching</span></h3>
+        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div class="glass p-12 rounded-[40px] package-card">
+                <h4 class="text-2xl font-bold mb-4">Basic Color Correction</h4>
+                <p class="text-4xl font-black text-blue-500 mb-6">$100</p>
+                <p class="opacity-60 mb-8">Consistent color and exposure for your entire wedding album. Perfect for a clean, natural look.</p>
+                <ul class="mb-8 space-y-2 opacity-80">
+                    <li>✅ White Balance Correction</li>
+                    <li>✅ Global Exposure Tuning</li>
+                    <li>✅ Batch Processing</li>
+                </ul>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 bg-slate-800 rounded-xl font-bold">Book Now</a>
             </div>
-            <div class="glass p-8 rounded-3xl package-card border border-blue-500">
-                <h4 class="text-2xl font-bold text-blue-400">Premium Retouch</h4>
-                <p class="text-4xl font-black text-white my-4">$180</p>
-                <p class="opacity-70 mb-6">100-120 High-end skin retouching, object removal, and cinematic color presets.</p>
-                <button class="w-full py-3 bg-blue-600 rounded-lg font-bold">Select Premium</button>
+            <div class="glass p-12 rounded-[40px] package-card border-blue-500">
+                <h4 class="text-2xl font-bold text-blue-400 mb-4">Premium Retouching</h4>
+                <p class="text-4xl font-black text-white mb-6">$180</p>
+                <p class="opacity-60 mb-8">100-120 high-end retouched photos including skin work, object removal, and cinematic tones.</p>
+                <ul class="mb-8 space-y-2 opacity-80">
+                    <li>✅ Advanced Skin Retouching</li>
+                    <li>✅ Distraction Removal</li>
+                    <li>✅ Premium Color Styles</li>
+                </ul>
+                <a href="mailto:waveforgecreative@gmail.com" class="block text-center py-4 bg-blue-600 rounded-xl font-bold">Book Now</a>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-slate-800 mt-20">
-        <img src="logo%20wave.png" alt="Waveforge Logo" class="h-24 mx-auto mb-6 brightness-110">
-        <p class="text-3xl font-black text-blue-500">WAVEFORGE CREATIVE</p>
-        <div class="flex justify-center space-x-6 mt-6">
-            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="text-xl hover:text-blue-500">Instagram</a>
-            <a href="mailto:waveforgecreative@gmail.com" class="text-xl hover:text-blue-500">Email</a>
+    <section id="track" class="py-24 px-6 bg-blue-600">
+        <div class="max-w-2xl mx-auto text-center text-white">
+            <h3 class="text-4xl font-black mb-4">Track Your Memories</h3>
+            <p class="mb-8 opacity-80">Check the live progress of your editing project.</p>
+            <div class="flex bg-white rounded-2xl overflow-hidden p-2">
+                <input type="text" id="orderId" placeholder="Enter Order ID" class="flex-1 p-4 outline-none text-black font-bold">
+                <button onclick="trackProject()" class="bg-black text-white px-10 py-4 rounded-xl font-bold">Track</button>
+            </div>
+            <div id="statusResult" class="mt-8 hidden">
+                <p id="statusLabel" class="text-2xl font-black"></p>
+                <div class="w-full bg-white/20 h-3 mt-4 rounded-full overflow-hidden">
+                    <div id="progressBar" class="bg-white h-full transition-all duration-1000"></div>
+                </div>
+            </div>
         </div>
-        <p class="mt-10 opacity-40">© 2026 Waveforge Creative-Byte. All Rights Reserved.</p>
+    </section>
+
+    <footer class="py-20 text-center px-6">
+        <img src="logo%20wave.png" alt="Logo" class="h-32 mx-auto mb-8">
+        <h5 class="text-4xl font-black tracking-tighter text-blue-600 mb-4">WAVEFORGE CREATIVE</h5>
+        <p class="opacity-40 max-w-md mx-auto mb-10">Premium Wedding Video & Photo Post-Production Agency. Shipping emotions worldwide.</p>
+        <div class="flex justify-center space-x-10 font-bold mb-12">
+            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="hover:text-blue-500">Instagram</a>
+            <a href="mailto:waveforgecreative@gmail.com" class="hover:text-blue-500">waveforgecreative@gmail.com</a>
+        </div>
+        <p class="text-xs opacity-20 uppercase tracking-[0.5em]">© 2026 Waveforge. All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -183,13 +187,13 @@
             result.classList.remove('hidden');
 
             if(id === "WF-101") {
-                label.innerText = "Processing (Editing In Progress)";
-                bar.style.width = "60%";
-            } else if(id === "WF-COMP") {
-                label.innerText = "Completed & Delivered";
+                label.innerText = "🎬 Editing In Progress...";
+                bar.style.width = "65%";
+            } else if(id === "WF-202") {
+                label.innerText = "✅ Project Delivered!";
                 bar.style.width = "100%";
             } else {
-                label.innerText = "Invalid ID. Contact Support.";
+                label.innerText = "❌ ID Not Found";
                 bar.style.width = "0%";
             }
         }
