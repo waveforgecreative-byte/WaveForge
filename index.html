@@ -7,31 +7,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* আগের ডার্ক থিম এবং গ্লসি এফেক্ট */
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; scroll-behavior: smooth; }
         .glass-nav { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        
         .hero-title { font-size: 4.5rem; line-height: 1; font-weight: 900; letter-spacing: -0.05em; }
         @media (min-width: 768px) { .hero-title { font-size: 7.5rem; } }
-        
-        /* সেই অরেঞ্জ-পিঙ্ক বাটন */
         .btn-magic { background: linear-gradient(90deg, #f97316, #db2777); transition: 0.3s; }
         .btn-magic:hover { transform: scale(1.05); opacity: 0.9; }
-
-        /* সাদা প্যাকেজ কার্ড (আগের থিম অনুযায়ী) */
-        .pkg-card { background: #ffffff; color: #1e293b; border-radius: 30px; transition: 0.4s; padding: 40px; cursor: pointer; position: relative; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        /* প্যাকেজ কার্ডের ডিজাইন ও গ্যাপ ম্যানেজমেন্ট */
+        .pkg-card { background: #ffffff; color: #1e293b; border-radius: 30px; transition: 0.4s; padding: 40px; cursor: pointer; position: relative; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; flex-direction: column; justify-content: space-between; }
         .pkg-card:hover { transform: translateY(-12px); border: 2px solid #3b82f6; }
         .pkg-card.premium { background: #2563eb; color: #ffffff; border: none; }
         
-        /* বেস্ট সেলার ব্যাজ */
         .best-seller { background: #fbbf24; color: #000; padding: 6px 20px; border-radius: 50px; font-weight: 900; font-size: 12px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4); }
-
-        /* ইনভয়েস পপআপ */
+        
+        /* ইনভয়েস ও মোডাল */
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.96); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: #0f172a; padding: 40px; border-radius: 30px; max-width: 500px; width: 100%; border: 1px solid #3b82f6; }
-        
-        #invoiceBox { display: none; background: white; color: black; padding: 40px; border-radius: 15px; font-family: 'Courier New', monospace; line-height: 1.4; }
-        .inv-header { border-bottom: 2px solid black; margin-bottom: 20px; padding-bottom: 10px; text-align: center; }
+        #invoiceBox { display: none; background: white; color: black; padding: 40px; border-radius: 15px; font-family: 'Courier New', monospace; }
         @media print { .no-print { display: none; } body { background: white; } }
     </style>
 </head>
@@ -68,66 +61,89 @@
         <h3 class="text-4xl font-black mb-10 uppercase text-blue-500 tracking-widest">About WaveForge</h3>
         <div class="max-w-4xl mx-auto space-y-6">
             <p class="text-2xl font-light opacity-90 leading-relaxed">
-                আমরা গত <span class="text-blue-500 font-bold">৫ বছর</span> ধরে গ্লোবাল স্ট্যান্ডার্ড বজায় রেখে ওয়েডিং সিনেমাটোগ্রাফি নিয়ে কাজ করছি।
+                For over <span class="text-blue-500 font-bold">5 years</span>, we have been delivering global-standard wedding cinematography and post-production services.
             </p>
             <p class="text-lg opacity-70 leading-relaxed">
-                আপনার জীবনের সেরা মুহূর্তগুলোকে আমরা সাধারণ ভিডিও থেকে একটি <span class="text-white font-bold">মাস্টারপিস মুভিতে</span> রূপান্তর করি। আমাদের হাই-এন্ড কালার গ্রেডিং এবং ইমারসিভ সাউন্ড ডিজাইন আপনার স্মৃতিগুলোকে করবে আরও প্রাণবন্ত। নিখুঁত ডিটেইলস এবং ক্রিয়েটিভ স্টোরিটেলিং আমাদের প্রতিটি কাজের সিগনেচার।
+                We transform your most precious moments from raw footage into a <span class="text-white font-bold">cinematic masterpiece</span>. With our high-end color grading and immersive sound design, we breathe life into your memories. Meticulous detail and creative storytelling are the signatures of every project we forge.
             </p>
         </div>
     </section>
 
     <section id="pricing" class="container mx-auto py-24 px-6 border-t border-slate-900">
-        <h3 class="text-5xl font-black mb-20 text-center uppercase tracking-tighter text-blue-500">Service Packages</h3>
+        <h3 class="text-5xl font-black mb-20 text-center uppercase tracking-tighter text-blue-500">Video Packages</h3>
         
-        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10 mb-24">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-12 mb-24">
             <div class="pkg-card" onclick="openCheckout('Standard Edit', '150')">
-                <h4 class="text-xl font-bold opacity-50 mb-2 uppercase">Standard</h4>
-                <p class="text-6xl font-black mb-8 text-blue-600">$150</p>
-                <ul class="text-left space-y-4 mb-10 text-sm font-semibold">
-                    <li>✓ 3-4 Min Highlight Film</li>
-                    <li>✓ 1 Hour Full Documentary Film</li>
-                    <li>✓ Professional Color Correction</li>
-                </ul>
+                <div>
+                    <h4 class="text-xl font-bold opacity-50 mb-2 uppercase">Standard</h4>
+                    <p class="text-6xl font-black mb-8 text-blue-600">$150</p>
+                    <ul class="text-left space-y-4 mb-10 text-sm font-semibold">
+                        <li>✓ 3-4 Min Highlight Film</li>
+                        <li>✓ 1 Hour Full Documentary Film</li>
+                        <li>✓ Professional Color Correction</li>
+                    </ul>
+                </div>
                 <button class="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-black uppercase text-xs">Get Started</button>
             </div>
+
             <div class="pkg-card premium" onclick="openCheckout('Cinematic Pro', '250')">
                 <div class="best-seller">BEST SELLER</div>
-                <h4 class="text-xl font-bold mb-2 uppercase">Cinematic Pro</h4>
-                <p class="text-6xl font-black mb-8 text-white">$250</p>
-                <ul class="text-left space-y-4 mb-10 text-sm font-semibold">
-                    <li>✓ Signature Highlight Film</li>
-                    <li>✓ Advanced Cinema Color Grading</li>
-                    <li>✓ Premium Sound Mix & SFX</li>
-                </ul>
+                <div>
+                    <h4 class="text-xl font-bold mb-2 uppercase text-white/70">Cinematic Pro</h4>
+                    <p class="text-6xl font-black mb-8 text-white">$250</p>
+                    <ul class="text-left space-y-4 mb-10 text-sm font-semibold">
+                        <li>✓ Signature Highlight Film</li>
+                        <li>✓ Advanced Cinema Color Grading</li>
+                        <li>✓ Premium Sound Mix & SFX</li>
+                    </ul>
+                </div>
                 <button class="w-full py-4 bg-white text-blue-600 rounded-2xl font-black uppercase text-xs shadow-xl">Choose Pro</button>
             </div>
+
             <div class="pkg-card" onclick="openCheckout('Elite Story', '320')">
-                <h4 class="text-xl font-bold opacity-50 mb-2 uppercase">Elite Story</h4>
-                <p class="text-6xl font-black mb-8 text-blue-600">$320</p>
-                <ul class="text-left space-y-4 mb-10 text-sm font-semibold">
-                    <li>✓ 4-7 Min Premium Highlight</li>
-                    <li>✓ Full Multicam Cinematic Film</li>
-                    <li>✓ Masterful Storytelling Edit</li>
-                </ul>
+                <div>
+                    <h4 class="text-xl font-bold opacity-50 mb-2 uppercase">Elite Story</h4>
+                    <p class="text-6xl font-black mb-8 text-blue-600">$320</p>
+                    <ul class="text-left space-y-4 mb-10 text-sm font-semibold">
+                        <li>✓ 4-7 Min Premium Highlight</li>
+                        <li>✓ Full Multicam Cinematic Film</li>
+                        <li>✓ Masterful Storytelling Edit</li>
+                    </ul>
+                </div>
                 <button class="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-black uppercase text-xs">Get Elite</button>
             </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        <h3 class="text-5xl font-black mb-20 text-center uppercase tracking-tighter text-blue-500">Photo Packages</h3>
+        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <div class="pkg-card" onclick="openCheckout('Photo Basic', '100')">
-                <h4 class="text-xl font-bold opacity-50 mb-2 uppercase">Photo Basic</h4>
-                <p class="text-6xl font-black mb-8 text-blue-600">$100</p>
-                <p class="text-sm opacity-70 mb-10">Wedding album color consistency & correction.</p>
+                <div>
+                    <h4 class="text-xl font-bold opacity-50 mb-2 uppercase">Photo Basic</h4>
+                    <p class="text-6xl font-black mb-8 text-blue-600">$100</p>
+                    <p class="text-sm opacity-70 mb-10">Wedding album color consistency & correction.</p>
+                </div>
                 <button class="w-full py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-black uppercase text-xs">Hire Now</button>
             </div>
             <div class="pkg-card premium" onclick="openCheckout('Photo Premium', '180')">
-                <h4 class="text-xl font-bold mb-2 uppercase">Photo Premium</h4>
-                <p class="text-6xl font-black mb-8 text-white">$180</p>
-                <p class="text-sm mb-10">120+ High-end skin retouch & object removal.</p>
+                <div>
+                    <h4 class="text-xl font-bold mb-2 uppercase text-white/70">Photo Premium</h4>
+                    <p class="text-6xl font-black mb-8 text-white">$180</p>
+                    <p class="text-sm mb-10 text-white/80">120+ High-end skin retouch & object removal.</p>
+                </div>
                 <button class="w-full py-4 bg-white text-blue-600 rounded-2xl font-black uppercase text-xs shadow-xl">Hire Now</button>
             </div>
         </div>
     </section>
+
+    <footer class="py-24 text-center border-t border-slate-900">
+        <img src="logo%20wave.png" alt="WaveForge Logo" class="h-40 mx-auto mb-8">
+        <h5 class="text-4xl font-black text-blue-600 mb-10 tracking-tighter uppercase">WaveForge</h5>
+        <div class="flex justify-center space-x-12 font-black text-lg mb-12">
+            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="hover:text-blue-500 transition">INSTAGRAM</a>
+            <a href="mailto:waveforgecreative@gmail.com" class="hover:text-blue-500 transition">EMAIL US</a>
+        </div>
+        <p class="text-[10px] opacity-20 tracking-[1.5em] uppercase font-bold italic">© 2026 WaveForge Agency | All Rights Reserved</p>
+    </footer>
 
     <div id="checkoutModal" class="modal">
         <div class="modal-content">
@@ -159,23 +175,13 @@
                     <p><b>STATUS     :</b> PAID ✅</p>
                     <p><b>TRX ID     :</b> <span id="invTrx"></span></p>
                     <hr style="margin: 15px 0;">
-                    <p style="font-size: 18px; font-weight: 900;">TOTAL: <span id="invPrice"></span></p>
+                    <p style="font-size: 18px; font-weight: 900;">TOTAL PAID: <span id="invPrice"></span></p>
                 </div>
                 <button onclick="window.print()" class="mt-6 w-full py-3 bg-black text-white rounded font-black no-print">Save as PDF</button>
                 <button onclick="closeModal()" class="mt-2 w-full py-2 border border-black rounded font-black no-print">Done</button>
             </div>
         </div>
     </div>
-
-    <footer class="py-24 text-center border-t border-slate-900">
-        <img src="logo%20wave.png" alt="WaveForge Logo" class="h-40 mx-auto mb-8">
-        <h5 class="text-4xl font-black text-blue-600 mb-10 tracking-tighter uppercase">WaveForge</h5>
-        <div class="flex justify-center space-x-12 font-black text-lg mb-12">
-            <a href="https://www.instagram.com/waveforgecreative/" target="_blank" class="hover:text-blue-500 transition border-b-2 border-transparent hover:border-blue-500 pb-1">INSTAGRAM</a>
-            <a href="mailto:waveforgecreative@gmail.com" class="hover:text-blue-500 transition border-b-2 border-transparent hover:border-blue-500 pb-1">EMAIL US</a>
-        </div>
-        <p class="text-[10px] opacity-20 tracking-[1.5em] uppercase font-bold italic">© 2026 WaveForge Agency | All Rights Reserved</p>
-    </footer>
 
     <script>
         function openCheckout(title, price) {
@@ -187,11 +193,13 @@
             document.getElementById('checkoutModal').style.display = 'none';
             document.getElementById('checkoutForm').style.display = 'block';
             document.getElementById('invoiceBox').style.display = 'none';
+            document.getElementById('clientName').value = "";
+            document.getElementById('trxId').value = "";
         }
         function confirmOrder() {
             const name = document.getElementById('clientName').value;
             const trx = document.getElementById('trxId').value;
-            if(!name || !trx) { alert("Please enter details!"); return; }
+            if(!name || !trx) { alert("Please complete details!"); return; }
             document.getElementById('invName').innerText = name.toUpperCase();
             document.getElementById('invPkg').innerText = document.getElementById('pkgTitle').innerText.toUpperCase();
             document.getElementById('invPrice').innerText = document.getElementById('pkgPrice').innerText;
